@@ -8,16 +8,17 @@ const getAPIConfig = () => {
 
   // Fallback for development
   if (!baseURL) {
-    baseURL = import.meta.env.MODE === 'production' 
-      ? 'https://quickshow-fullstack-harsh.onrender.com'
-      : 'http://localhost:3000';
+    baseURL =
+      import.meta.env.MODE === "production"
+        ? "https://quickshow-fullstack-harsh.onrender.com"
+        : "http://localhost:3000";
   }
 
   return {
     baseURL,
     timeout: 10000,
     headers: {
-      'Content-Type': 'application/json',
+      "Content-Type": "application/json",
     },
   };
 };
