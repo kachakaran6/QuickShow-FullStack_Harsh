@@ -21,7 +21,29 @@ app.use('/api/stripe', express.raw({type: 'application/json'}), stripeWebhooks)
 
 // Middleware
 app.use(express.json())
-app.use(cors())
+
+// CORS Configuration
+const allowedOrigins = [
+  'http://localhost:3000',
+  'http://127.0.0.1:3000',
+  'http://localhost:5173', // Vite default port
+  'https://quickshow-fullstack-harsh.onrender.com'
+];
+
+app.use(cors({
+  origin: (origin, callback) => {
+    // Allow requests with no origin (like mobile apps or curl requests)
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+}))
+
 app.use(clerkMiddleware())
 
 
@@ -33,6 +55,5 @@ app.use('/api/booking', bookingRouter)
 app.use('/api/admin', adminRouter)
 app.use('/api/user', userRouter)
 
-
-app.listen(port, ()=> console.log(`Server listening at http://localhost:${port}`));
+app.listen(port, ()=> console.log(`Server is running on port ${port}`));
 
