@@ -33,9 +33,7 @@ export const getDashboardData = async (req, res) =>{
 // API to get all shows
 export const getAllShows = async (req, res) =>{
     try {
-        const today = new Date();
-        today.setHours(0, 0, 0, 0); // Start of today
-        const shows = await Show.find({showDateTime: { $gte: today }}).populate('movie').sort({ showDateTime: 1 })
+        const shows = await Show.find({}).populate('movie').sort({ showDateTime: -1 })
         res.json({success: true, shows})
     } catch (error) {
         console.error(error);
