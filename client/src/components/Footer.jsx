@@ -10,9 +10,7 @@ const Footer = () => {
             <span className='logo-text'>Movie<span>Swift</span></span>
           </div>
           <p className="mt-6 text-sm">
-            Lorem Ipsum has been the industry's standard dummy text ever since
-            the 1500s, when an unknown printer took a galley of type and
-            scrambled it to make a type specimen book.
+            Experience the latest blockbusters with the fastest booking system. Your premium gateway to a world of cinema and entertainment.
           </p>
           <div className="flex items-center gap-2 mt-4">
             <img
@@ -25,27 +23,23 @@ const Footer = () => {
         </div>
         <div className="flex-1 flex items-start md:justify-end gap-20 md:gap-40">
           <div>
-            <h2 className="font-semibold mb-5">Company</h2>
-            <ul className="text-sm space-y-2">
-              <li>
-                <a href="#">Home</a>
-              </li>
-              <li>
-                <a href="#">About us</a>
-              </li>
-              <li>
-                <a href="#">Contact us</a>
-              </li>
-              <li>
-                <a href="#">Privacy policy</a>
-              </li>
+            <h2 className="font-semibold mb-5 uppercase tracking-wider text-white">Company</h2>
+            <ul className="text-sm space-y-3">
+              <li><a href="#" className="hover:text-primary transition">Home</a></li>
+              <li><a href="#" className="hover:text-primary transition">About us</a></li>
+              <li><a href="#" className="hover:text-primary transition">Contact us</a></li>
+              <li><a href="#" className="hover:text-primary transition">Privacy policy</a></li>
             </ul>
           </div>
           <div>
-            <h2 className="font-semibold mb-5">Get in touch</h2>
-            <div className="text-sm space-y-2">
-              <p>+1-234-567-890</p>
-              <p>contact@example.com</p>
+            <h2 className="font-semibold mb-5 uppercase tracking-wider text-white">Get in touch</h2>
+            <div className="text-sm space-y-3">
+              <p className="hover:text-primary transition">
+                <a href="tel:+916352674940">+91 6352674940</a>
+              </p>
+              <p className="hover:text-primary transition">
+                <a href="mailto:harshhh.p21@gmail.com">harshhh.p21@gmail.com</a>
+              </p>
             </div>
           </div>
         </div>
